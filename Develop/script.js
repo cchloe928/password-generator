@@ -21,15 +21,16 @@ generateEL.addEventListener('click', () => {
   const hasNumber = numbersEl.checked;
   const hasSymbol = symbolsEl.checked;
   
+  generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
+
   resultEl.innerText = generatePassword(
-    length, hasLower, hasUpper, hasNumber, hasSymbol
-    );
+    length, hasLower, hasUpper, hasNumber, hasSymbol);
 });
 
 
 
 function generatePassword (lower, upper, number, symbol, length) {
-  let generatePassword = '';
+  let generatedPassword = '';
 
   const typesCount = lower + upper + number + symbol;
 
