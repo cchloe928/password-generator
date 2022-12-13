@@ -4,10 +4,8 @@
 function generatePassword () {
   var userChoice = prompt 
 
-  let result = window.confirm ("Generate Password");
-  console.log (result);
 
-  let length = window.confirm ("length");
+  let length = window.prompt ("Enter letters from 8 - 128 Characters");
   console.log (length);
 
   let uppercase = window.confirm ("uppercase");
@@ -22,36 +20,49 @@ function generatePassword () {
   let symbols = window.confirm ("symbols");
   console.log (symbols);
 
+  const capitolLetters = "ABCDEFGHJIKLMNOPQRSTUVWXYZ"
+  const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
+  const number = "1234567890"
+  const symbol = "!@#$%^&*()-=_+[]{}"
+
+  let chosenCharacters = ""
+
+
+
+if (uppercase) {
+  chosenCharacters += capitolLetters
+};
+
+if (lowercase) {
+  chosenCharacters += lowerCaseLetters
 };
 
 
+if (numbers) {
+  chosenCharacters += numbers
+};
 
-function generatePassword () {
-  const chars =
-  "01234567890ABCDEFGHJIKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-=_+[]{}"
+if (symbols) {
+  chosenCharacters += symbols
+};
+
 
   let passwordLength = 128;
   let password = '';
 
-  for (let i = 0; i < passwordLength; i ++) {
-    let getRandomNumber = Math.floor(math.random() * chars.length);
+  for (let i = 0; i < length; i ++) {
+    let getRandomNumber = Math.floor(Math.random() * chosenCharacters.length);
 
-    password += chars. substring (randomNumber, randomNumber + 1)
+    password += chosenCharacters. substring (getRandomNumber, getRandomNumber + 1)
   }
+  return password
   document.getElementById('password').value = password;
-
-
-
-
-
-
-
+};
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-
 
 
 
