@@ -1,24 +1,25 @@
 // Assignment code here
 
 
-function generatePassword () {
-  var userChoice = prompt 
+function generatePassword() {
+  var userChoice = prompt
 
 
-  let length = window.prompt ("Enter letters from 8 - 128 Characters");
-  console.log (length);
+  let passLength = window.prompt("Enter letters from 8 - 128 Characters");
+  console.log(passLength);
+  console.log(8>= && <=128);
 
-  let uppercase = window.confirm ("uppercase");
-  console.log (uppercase);
+  let useUppercase = window.confirm("Uppercase");
+  console.log(useUppercase);
 
-  let lowercase = window.confirm ("lowercase");
-  console.log (lowercase);
+  let useLowercase = window.confirm("Lowercase");
+  console.log(useLowercase);
 
-  let numbers = window.confirm ("numbers");
-  console.log (numbers);
+  let useNumbers = window.confirm("Numbers");
+  console.log(useNumbers);
 
-  let symbols = window.confirm ("symbols");
-  console.log (symbols);
+  let useSymbols = window.confirm("Symbols");
+  console.log(useSymbols);
 
   const capitolLetters = "ABCDEFGHJIKLMNOPQRSTUVWXYZ"
   const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
@@ -29,31 +30,33 @@ function generatePassword () {
 
 
 
-if (uppercase) {
-  chosenCharacters += capitolLetters
-};
+  if (useUppercase) {
+    chosenCharacters += capitolLetters
+  };
 
-if (lowercase) {
-  chosenCharacters += lowerCaseLetters
-};
-
-
-if (numbers) {
-  chosenCharacters += numbers
-};
-
-if (symbols) {
-  chosenCharacters += symbols
-};
+  if (useLowercase) {
+    chosenCharacters += lowerCaseLetters
+  };
 
 
-  let passwordLength = 128;
+  if (useNumbers) {
+    chosenCharacters += number
+  };
+
+  if (useSymbols) {
+    chosenCharacters += symbol
+  };
+
+
   let password = '';
 
-  for (let i = 0; i < length; i ++) {
+
+  for (let i = 0; i < passLength; i++) { 
+    console.log (i);
+
     let getRandomNumber = Math.floor(Math.random() * chosenCharacters.length);
 
-    password += chosenCharacters. substring (getRandomNumber, getRandomNumber + 1)
+    password += chosenCharacters.substring(getRandomNumber, getRandomNumber + 1)
   }
   return password
   document.getElementById('password').value = password;
