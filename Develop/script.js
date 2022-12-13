@@ -7,7 +7,15 @@ function generatePassword() {
 
   let passLength = window.prompt("Enter letters from 8 - 128 Characters");
   console.log(passLength);
-  console.log(8>= && <=128);
+  if (passLength < 8) {
+    alert('The password must be at least 8 characters');
+    return null;
+  }
+
+if (passLength > 128) {
+    alert('The password must be less than or equal to 128 characters');
+    return null;
+  }
 
   let useUppercase = window.confirm("Uppercase");
   console.log(useUppercase);
@@ -29,7 +37,6 @@ function generatePassword() {
   let chosenCharacters = ""
 
 
-
   if (useUppercase) {
     chosenCharacters += capitolLetters
   };
@@ -37,7 +44,6 @@ function generatePassword() {
   if (useLowercase) {
     chosenCharacters += lowerCaseLetters
   };
-
 
   if (useNumbers) {
     chosenCharacters += number
@@ -50,7 +56,6 @@ function generatePassword() {
 
   let password = '';
 
-
   for (let i = 0; i < passLength; i++) { 
     console.log (i);
 
@@ -58,6 +63,7 @@ function generatePassword() {
 
     password += chosenCharacters.substring(getRandomNumber, getRandomNumber + 1)
   }
+
   return password
   document.getElementById('password').value = password;
 };
@@ -75,7 +81,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
